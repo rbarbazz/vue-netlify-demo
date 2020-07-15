@@ -24,7 +24,7 @@
 #nav {
   align-items: center;
   display: flex;
-  margin-bottom: 48px;
+  margin-bottom: 42px;
 
   a {
     font-weight: bold;

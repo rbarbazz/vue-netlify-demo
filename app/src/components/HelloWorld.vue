@@ -5,12 +5,13 @@
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
+const HelloWorld = {
   props: {
     msg: String,
   },
 };
+
+export default HelloWorld;
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
