@@ -18,3 +18,19 @@ Start dev server:
 cd app
 npm run serve
 ```
+
+## Netlify
+
+Install Netlify CLI globally:
+
+`npm install -g netlify-cli`
+
+Init the site:
+
+`netlify init --manual`
+
+Start the dev server:
+`netlify dev`
+
+Start a live share dev server:
+`netlify dev --live`

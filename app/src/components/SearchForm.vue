@@ -27,8 +27,13 @@ const SearchForm = {
     onChange(value) {
       this.searchTerm = value;
     },
-    onClick() {
-      console.log(this.searchTerm);
+    async onClick() {
+      const response = await fetch(
+        `/.netlify/functions/getCurrencyData?q=${this.searchTerm}`,
+      );
+
+      const results = await response.json();
+      this.$emit('fetchedResults', results);
     },
   },
 };
