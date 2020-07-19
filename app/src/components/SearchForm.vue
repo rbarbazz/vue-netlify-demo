@@ -32,8 +32,12 @@ const SearchForm = {
         `/.netlify/functions/getCurrencyData?q=${this.searchTerm}`,
       );
 
-      const results = await response.json();
-      this.$emit('fetchedResults', results);
+      if (!response.ok) {
+        return this.$emit('fetchedData', null);
+      }
+      const { data } = await response.json();
+
+      return this.$emit('fetchedData', data[this.searchTerm]);
     },
   },
 };
@@ -50,12 +54,13 @@ $input-focus-box-shadow-size: 0;
 
 form {
   display: flex;
+  margin-bottom: 1rem;
 
   > div {
     width: 100%;
   }
   button {
-    margin-left: 16px;
+    margin-left: 1rem;
   }
 }
 </style>
