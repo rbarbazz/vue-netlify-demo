@@ -30,7 +30,17 @@ Init the site:
 `netlify init --manual`
 
 Start the dev server:
+
 `netlify dev`
 
 Start a live share dev server:
+
 `netlify dev --live`
+
+Deploy a draft:
+
+`netlify deploy`
+
+Deploy to prod:
+
+`netlify deploy --prod`
