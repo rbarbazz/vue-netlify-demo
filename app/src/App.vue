@@ -12,6 +12,9 @@
 </template>
 
 <style lang="scss">
+@import '~bulma';
+@import '~buefy/src/scss/buefy';
+
 #app {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;

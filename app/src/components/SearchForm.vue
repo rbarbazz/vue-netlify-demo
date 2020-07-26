@@ -54,9 +54,6 @@ export default SearchForm;
 $input-focus-border-color: #2c3e50;
 $input-focus-box-shadow-size: 0;
 
-@import '~bulma';
-@import '~buefy/src/scss/buefy';
-
 form {
   margin-bottom: 1rem;
 }
