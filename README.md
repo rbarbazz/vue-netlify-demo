@@ -37,6 +37,9 @@ Start a live share dev server:
 
 `netlify dev --live`
 
+Build:
+`netlify build`
+
 Deploy a draft:
 
 `netlify deploy`
