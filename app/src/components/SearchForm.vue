@@ -1,22 +1,29 @@
 <template>
   <form @submit.prevent="onClick">
-    <b-input
-      @input="onChange"
-      icon="magnify"
-      placeholder="Search..."
-      type="search"
-      v-model="searchTerm"
-    >
-    </b-input>
-    <b-button @click="onClick">Submit</b-button>
+    <b-field label="Search for a crypto ticker">
+      <b-input
+        @input="onChange"
+        icon="magnify"
+        placeholder="BTC, ETH, DOGE..."
+        type="search"
+        v-model="searchTerm"
+      >
+      </b-input>
+    </b-field>
+    <b-field>
+      <p class="control">
+        <b-button class="button" @click="onClick">Submit</b-button>
+      </p>
+    </b-field>
   </form>
 </template>
 
 <script>
 import Vue from 'vue';
-import { Button, Input } from 'buefy';
+import { Button, Field, Input } from 'buefy';
 
 Vue.use(Button);
+Vue.use(Field);
 Vue.use(Input);
 
 const SearchForm = {
@@ -28,9 +35,7 @@ const SearchForm = {
       this.searchTerm = value;
     },
     async onClick() {
-      const response = await fetch(
-        `/.netlify/functions/getCurrencyData?q=${this.searchTerm}`,
-      );
+      const response = await fetch(`/.netlify/functions/getCurrencyData?q=${this.searchTerm}`);
 
       if (!response.ok) {
         return this.$emit('fetchedData', null);
@@ -53,14 +58,6 @@ $input-focus-box-shadow-size: 0;
 @import '~buefy/src/scss/buefy';
 
 form {
-  display: flex;
   margin-bottom: 1rem;
-
-  > div {
-    width: 100%;
-  }
-  button {
-    margin-left: 1rem;
-  }
 }
 </style>

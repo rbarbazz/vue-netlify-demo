@@ -21,6 +21,11 @@
         <div v-html="compiledMarkdown" class="content"></div>
       </div>
     </div>
+    <div v-else-if="result === null">
+      <p>
+        No currency found for this ticker
+      </p>
+    </div>
   </div>
 </template>
 
@@ -31,7 +36,7 @@ import marked from 'marked';
 const APIClient = {
   components: { SearchForm },
   data() {
-    return { result: null };
+    return { result: undefined };
   },
   computed: {
     compiledMarkdown() {
