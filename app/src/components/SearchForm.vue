@@ -2,7 +2,6 @@
   <form @submit.prevent="onClick">
     <b-field label="Search for a crypto ticker">
       <b-input
-        @input="onChange"
         icon="magnify"
         placeholder="BTC, ETH, DOGE..."
         type="search"
@@ -31,9 +30,6 @@ const SearchForm = {
     return { searchTerm: '' };
   },
   methods: {
-    onChange(value) {
-      this.searchTerm = value;
-    },
     async onClick() {
       const response = await fetch(`/.netlify/functions/getCurrencyData?q=${this.searchTerm}`);
 
